@@ -18,4 +18,14 @@ CREATE TABLE graduates(
 insert into graduates(name,age,gender,points) select name,age,gender,points from students where name = "Layal";
 update graduates set Graduation = "08/09/2018" where name="Layal";
 delete from students where name="Layal";
+/*Joins*/
+CREATE TABLE "empcomp" (
+	"Employee Name" TEXT NOT NULL UNIQUE,
+	"Company Name" TEXT NOT NULL,
+	"Company Date" INTEGER
+);
+insert into empcomp ("Employee Name","Company Name") SELECT name,Company from employees;
+UPDATE empcomp SET "Company Date"="Date" from companies where "Company Name"="Name";
+select "Employee Name" FROM empcomp where "Company Date"<"2000";
+select "Company Name" FROM empcomp inner join employees on employees."Name"=empcomp."Employee Name" where Role="Graphic Designer";
 
