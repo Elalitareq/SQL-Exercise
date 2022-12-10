@@ -15,9 +15,9 @@ CREATE TABLE graduates(
         Points INTEGER,
         Graduation TEXT
 );
-insert into graduates(name,age,gender,points) select name,age,gender,points from students where name = "Layal";
-update graduates set Graduation = "08/09/2018" where name="Layal";
-delete from students where name="Layal";
+insert into graduates(name,age,gender,points) SELECT name,age,gender,points from students where name = "Layal";
+UPDATE graduates set Graduation = "08/09/2018" where name="Layal";
+Delete from students where name="Layal";
 /*Joins*/
 CREATE TABLE "empcomp" (
 	"Employee Name" TEXT NOT NULL UNIQUE,
@@ -26,6 +26,11 @@ CREATE TABLE "empcomp" (
 );
 insert into empcomp ("Employee Name","Company Name") SELECT name,Company from employees;
 UPDATE empcomp SET "Company Date"="Date" from companies where "Company Name"="Name";
-select "Employee Name" FROM empcomp where "Company Date"<"2000";
-select "Company Name" FROM empcomp inner join employees on employees."Name"=empcomp."Employee Name" where Role="Graphic Designer";
-
+SELECT "Employee Name" FROM empcomp where "Company Date"<"2000";
+SELECT "Company Name" FROM empcomp inner join employees on employees."Name"=empcomp."Employee Name" where Role="Graphic Designer";
+/*Count & Filter*/
+SELECT Name from students where Points=(SELECT max(Points) FROM students);
+SELECT avg(Points) FROM students;
+SELECT count(Points) from students WHERE Points="500";
+select count("Name") from students where instr(name,"s");
+select * from students order by Points desc;
