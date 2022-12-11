@@ -1,7 +1,7 @@
 /*Basic Querries*/
 /*1.*/ SELECT Name from students;
 /*2.*/ SELECT * from students where age>30;
-/*3.*/ SELECT * from students where gender="F";
+/*3.*/ SELECT Name from students where gender="F" and age>"30";
 /*4.*/ SELECT Points from students where name="Alex";
 /*5.*/ insert into students (name,age,gender,points) values("Tareq","26","M","200");
 /*6.*/ UPDATE students set Points=Points+5 where name="Basma";
