@@ -1,5 +1,5 @@
 /*Basic Querries*/
-/*1.*/ SELECT * from students;
+/*1.*/ SELECT Name from students;
 /*2.*/ SELECT * from students where age>30;
 /*3.*/ SELECT * from students where gender="F";
 /*4.*/ SELECT Points from students where name="Alex";
